@@ -6,14 +6,14 @@
 {% block content %}
 <br>
 <div class="container bg-white shadow-md p-5 form-layout">
-    <h3>Create an article</h3>
-    <p>You may create an article below: </p>
+    <h3>Update article</h3>
+    <p>You may update your article below: </p>
     <br>
     <form method="Post" autocomplete="off">
         {% csrf_token %}
-        {{CreateArticleForm|crispy}}
+        {{UpdateArticleForm|crispy}}
 
-        <button class="btn btn-success" type="submit">Create Article</button>
+        <button class="btn btn-success" type="submit">Update Article</button>
     </form>
 </div>
 

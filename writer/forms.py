@@ -1,5 +1,6 @@
 from .models import Article
 from django.forms import ModelForm
+from account.models import User
 
 class ArticleForm(ModelForm):
 
@@ -7,3 +8,12 @@ class ArticleForm(ModelForm):
         
         model = Article
         fields = ["title", "content", "is_premium",]
+        
+class UpdateUserForm(ModelForm):
+    
+    password = None 
+    
+    class Meta:
+        model = User 
+        fields = ["email", "first_name", "last_name",]
+        exclude = ["password1", "password2",]

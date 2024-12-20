@@ -10,6 +10,13 @@
     <br><br>
     {{article.date_posted}}
     <br><br>
+
+    {% if article.is_premium == True %}
+        <strong> ⭐ Premium </strong>
+    {% elif article.is_premium == False %}
+        <strong>Standard</strong>
+    {% endif %}
+    <hr>
     <a href="{% url 'update-article' article.id %}">Update article</a>
     <br>
     <a href="{% url 'delete-article' article.id%}">Delete article</a>
